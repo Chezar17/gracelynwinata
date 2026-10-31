@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B0F1A">
+<meta name="description" content="Akses ebook Lunas dari Pinjol dan komunitas Saling Bantu Yuk!!">
+<title>Lunas dari Pinjol | Akses Pembeli</title>
+<style>
+  :root {
+    --ink: #0B0F1A;
+    --panel: rgba(255,255,255,0.05);
+    --line: rgba(255,255,255,0.10);
+    --text: #E5E7EB;
+    --muted: #9CA3AF;
+    --gold: #D4AF37;
+    --gold-2: #F5E6A8;
+    --teal: #14B8A6;
+    --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--ink);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(96px + var(--safe-b));
+  }
+
+  /* Latar ringan: tidak memakai blur berat agar tidak membebani HP */
+  .glow {
+    position: fixed; width: 320px; height: 320px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,175,55,0.22), transparent 70%);
+    pointer-events: none; z-index: 0;
+    animation: drift 16s ease-in-out infinite;
+  }
+  .glow.g1 { top: -120px; left: -120px; }
+  .glow.g2 { bottom: -160px; right: -140px; background: radial-gradient(circle, rgba(20,184,166,0.2), transparent 70%); animation-delay: -8s; }
+
+  .wrap { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: 0 18px; }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(11,15,26,0.92);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; height: 56px; }
+  .brand { font-family: var(--serif); font-size: 16px; color: #fff; }
+  .brand span { color: var(--gold); }
+  .tag {
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(212,175,55,0.45);
+    padding: 5px 10px; border-radius: 999px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 36px 0 28px; text-align: center; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+    animation: rise 0.8s ease both;
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 700;
+    font-size: clamp(32px, 9vw, 52px); line-height: 1.12; color: #fff;
+    animation: rise 0.9s 0.1s ease both;
+  }
+  h1 .shine {
+    background: linear-gradient(100deg, var(--gold) 20%, var(--gold-2) 40%, #fff 50%, var(--gold-2) 60%, var(--gold) 80%);
+    background-size: 250% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: shine 6s linear infinite;
+  }
+  .lead { max-width: 480px; margin: 16px auto 0; font-size: 15px; color: var(--muted); animation: rise 0.9s 0.2s ease both; }
+  .author { margin-top: 14px; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #cbd5e1; animation: rise 0.9s 0.3s ease both; }
+
+  /* ---------- MEMBER CARD ---------- */
+  .member {
+    position: relative; margin: 30px auto 0; max-width: 420px;
+    aspect-ratio: 1.75 / 1; border-radius: 20px; padding: 22px 22px;
+    background: linear-gradient(145deg, #1f2937 0%, #0b0f1a 55%, #1a1405 100%);
+    border: 1px solid rgba(212,175,55,0.35);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    overflow: hidden; text-align: left;
+    animation: rise 1s 0.4s ease both, floatCard 7s ease-in-out infinite;
+  }
+  .member::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,0.16) 50%, transparent 65%);
+    transform: translateX(-100%);
+    animation: sheen 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .member .row { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
+  .member .label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); }
+  .member .chip { width: 36px; height: 26px; border-radius: 6px; background: linear-gradient(135deg, #f5e6a8, #b8912a); }
+  .member .name { position: absolute; left: 22px; bottom: 48px; z-index: 1; font-family: var(--serif); font-size: 21px; color: #fff; }
+  .member .meta { position: absolute; left: 22px; right: 22px; bottom: 18px; z-index: 1; display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); }
+  .member .meta strong { color: #e5e7eb; font-weight: 600; }
+
+  /* ---------- AKSES CEPAT (mobile) ---------- */
+  .quick { display: grid; gap: 12px; margin-top: 26px; animation: rise 0.9s 0.5s ease both; }
+  .btn {
+    position: relative; display: flex; align-items: center; justify-content: center; gap: 8px;
+    width: 100%; min-height: 56px; padding: 16px 20px; border-radius: 14px;
+    text-decoration: none; font-weight: 700; font-size: 16px; color: var(--ink);
+    background: linear-gradient(100deg, var(--gold) 0%, var(--gold-2) 50%, var(--gold) 100%);
+    background-size: 200% auto;
+    box-shadow: 0 10px 26px rgba(212,175,55,0.25);
+    overflow: hidden;
+    transition: transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn::after {
+    content: ""; position: absolute; top: 0; left: -75%; width: 50%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.55), transparent);
+    transform: skewX(-20deg);
+    animation: swipe 3.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn.alt { background: linear-gradient(100deg, #0f766e, #14b8a6, #0f766e); background-size: 200% auto; color: #fff; box-shadow: 0 10px 26px rgba(20,184,166,0.25); }
+  .btn.alt::after { animation-delay: 1.8s; }
+
+  /* ---------- SECTIONS ---------- */
+  section.block { padding: 40px 0; border-top: 1px solid var(--line); }
+  .kicker { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; color: #fff; margin-bottom: 10px; line-height: 1.25; }
+  .sub { color: var(--muted); margin-bottom: 20px; font-size: 15px; }
+
+  .glass {
+    background: var(--panel); border: 1px solid var(--line);
+    border-radius: 18px; padding: 22px; margin-bottom: 14px;
+  }
+  .glass h3 { font-family: var(--serif); font-size: 19px; color: #fff; margin-bottom: 6px; }
+  .glass p { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 10px; text-align: center; }
+
+  /* ---------- STEPS ---------- */
+  .steps { list-style: none; counter-reset: st; padding: 6px 22px; }
+  .steps li {
+    counter-increment: st; position: relative;
+    padding: 16px 0 16px 52px; border-bottom: 1px solid var(--line);
+    font-size: 14px; color: var(--muted);
+  }
+  .steps li:last-child { border-bottom: none; }
+  .steps li::before {
+    content: "0" counter(st); position: absolute; left: 0; top: 14px;
+    font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--gold);
+  }
+  .steps strong { color: #fff; font-weight: 600; display: block; font-size: 15px; margin-bottom: 2px; }
+
+  /* ---------- PROGRESS ---------- */
+  .progress-wrap { height: 6px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
+  .progress-bar {
+    height: 100%; width: 0; border-radius: 999px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-2));
+    transition: width 0.8s ease;
+  }
+  .progress-label { font-size: 13px; color: var(--muted); margin: 10px 0 14px; }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .checks label {
+    display: flex; align-items: center; gap: 10px; min-height: 48px;
+    padding: 12px; border-radius: 12px;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--line);
+    font-size: 14px; color: var(--text); cursor: pointer;
+  }
+  .checks label:active { background: rgba(212,175,55,0.08); }
+  .checks input { accent-color: var(--gold); width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* ---------- RULES ---------- */
+  .rules { list-style: none; }
+  .rules li { padding: 10px 0 10px 24px; position: relative; font-size: 14px; color: var(--muted); }
+  .rules li::before { content: "\2726"; position: absolute; left: 0; color: var(--gold); }
+
+  /* ---------- EMERGENCY ---------- */
+  .contact {
+    display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 14px;
+  }
+  .contact:last-child { border-bottom: none; }
+  .contact span { color: var(--muted); }
+  .contact a { color: #fff; font-weight: 600; text-decoration: none; letter-spacing: 0.3px; padding: 6px 2px; }
+
+  .disclaimer { font-size: 12px; color: var(--muted); text-align: center; padding: 26px 8px 8px; line-height: 1.7; }
+  footer { text-align: center; font-size: 11px; color: #6b7280; padding: 12px 0 24px; letter-spacing: 1px; }
+
+  /* ---------- BOTTOM BAR (HP) ---------- */
+  .dock {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
+    background: rgba(11,15,26,0.96);
+    border-top: 1px solid var(--line);
+    padding: 10px 14px calc(10px + var(--safe-b));
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .dock a {
+    display: flex; align-items: center; justify-content: center; min-height: 48px;
+    border-radius: 12px; font-weight: 700; font-size: 14px; text-decoration: none;
+    color: var(--ink); background: linear-gradient(100deg, var(--gold), var(--gold-2));
+    transition: transform 0.15s ease;
+  }
+  .dock a.alt { color: #fff; background: linear-gradient(100deg, #0f766e, #14b8a6); }
+  .dock a:active { transform: scale(0.96); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @keyframes shine { to { background-position: 250% center; } }
+  @keyframes drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(24px,-18px); } }
+  @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes sheen { 0%, 60% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+  @keyframes swipe { 0%, 55% { left: -75%; } 100% { left: 125%; } }
+
+  /* Lebih lebar di tablet */
+  @media (min-width: 600px) {
+    .dock { display: none; }
+    body { padding-bottom: 0; }
+    .checks { grid-template-columns: repeat(2, 1fr); }
+    h2 { font-size: 30px; }
+    .hero { padding: 60px 0 40px; }
+  }
+  /* Di layar kecil, cek tetap satu kolom agar mudah dibaca */
+  @media (max-width: 359px) {
+    .checks { grid-template-columns: 1fr; }
+    .member .name { font-size: 18px; }
+  }
+  /* Sentuhan: matikan efek hover dan animasi berat */
+  @media (hover: none) {
+    .glow { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+
+  <nav>
+    <div class="wrap">
+      <div class="brand">Lunas <span>dari Pinjol</span></div>
+      <div class="tag">Edisi Pembeli</div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Akses Eksklusif</div>
+      <h1>Selamat datang di <span class="shine">Lunas dari Pinjol</span></h1>
+      <p class="lead">Langkah demi langkah untuk menghitung, menegosiasi, dan keluar dari hutang pinjol. Kamu tidak perlu menanggungnya sendirian.</p>
+      <p class="author">Ditulis oleh Gracelyn Winata</p>
+
+      <div class="member">
+        <div class="row">
+          <div class="label">Member Access</div>
+          <div class="chip"></div>
+        </div>
+        <div class="name">Pembaca Pilihan</div>
+        <div class="meta">
+          <span>Ebook <strong>PDF</strong></span>
+          <span>Komunitas <strong>Telegram</strong></span>
+        </div>
+      </div>
+
+      <div class="quick">
+        <a class="btn" href="https://drive.google.com/file/d/1J5OHbr0DFiXjQG4jfVEyMuNMikYTbmB_/view?usp=sharing" target="_blank" rel="noopener">Buka ebook &rarr;</a>
+        <a class="btn alt" href="https://t.me/+-oTlnezT0UFiMzk1" target="_blank" rel="noopener">Masuk komunitas &rarr;</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="block reveal">
+      <div class="kicker">Akses 01</div>
+      <h2>Baca ebook kamu</h2>
+      <p class="sub">Buka atau unduh file PDF dari Google Drive. Bisa dibaca di HP maupun laptop, kapan saja.</p>
+      <div class="glass">
+        <h3>Lunas dari Pinjol (PDF)</h3>
+        <p>Panduan lengkap dari audit hutang sampai langkah menuju pelunasan, dilengkapi templat surat dan anggaran.</p>
+        <a class="btn" href="https://drive.google.com/file/d/1J5OHbr0DFiXjQG4jfVEyMuNMikYTbmB_/view?usp=sharing" target="_blank" rel="noopener">Buka ebook &rarr;</a>
+        <p class="hint">Simpan salinannya ke HP agar bisa dibaca tanpa internet.</p>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <div class="kicker">Akses 02</div>
+      <h2>Komunitas "Saling Bantu Yuk!!"</h2>
+      <p class="sub">Ruang berbagi cerita dan saling mendukung dengan sesama orang yang sedang menghadapi masalah serupa.</p>
+      <div class="glass">
+        <h3>Gabung grup Telegram</h3>
+        <p>Bertukar pengalaman dan dukungan dengan sesama anggota. Dukungan ini tidak menggantikan bantuan profesional.</p>
+        <a class="btn alt" href="https://t.me/+-oTlnezT0UFiMzk1" target="_blank" rel="noopener">Masuk komunitas &rarr;</a>
+        <p class="hint">Patuhi aturan grup demi kenyamanan bersama.</p>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <div class="kicker">Panduan</div>
+      <h2>Mulai dari sini</h2>
+      <p class="sub">Urutan singkat agar kamu tidak kewalahan di awal.</p>
+      <ol class="glass steps">
+        <li><strong>Tenangkan diri dulu</strong>Jika kondisimu sangat berat, baca Bab 1 dan Bab 4 terlebih dahulu.</li>
+        <li><strong>Hitung semua hutangmu</strong>Buat tabel audit di Google Sheets sesuai saran di Bab 2.</li>
+        <li><strong>Cek legalitas penyedia</strong>Gunakan daftar resmi OJK di Bab 3 untuk memisahkan pinjol legal dan ilegal.</li>
+        <li><strong>Jalankan langkah berikutnya</strong>Negosiasi untuk pinjol legal, atau pelaporan untuk pinjol ilegal, sesuai Bab 5 dan Bab 6.</li>
+      </ol>
+    </section>
+
+    <section class="block reveal">
+      <div class="kicker">Progres</div>
+      <h2>Catat langkahmu</h2>
+      <p class="sub">Centang setiap langkah yang sudah kamu kerjakan. Ini hanya pengingat untuk dirimu sendiri.</p>
+      <div class="glass">
+        <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+        <p class="progress-label" id="progressLabel">0 dari 4 langkah selesai</p>
+        <div class="checks">
+          <label><input type="checkbox" class="step-check"> Langkah 1</label>
+          <label><input type="checkbox" class="step-check"> Langkah 2</label>
+          <label><input type="checkbox" class="step-check"> Langkah 3</label>
+          <label><input type="checkbox" class="step-check"> Langkah 4</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <div class="kicker">Komunitas</div>
+      <h2>Aturan grup</h2>
+      <p class="sub">Komunitas ini dibangun atas rasa saling percaya.</p>
+      <div class="glass">
+        <ul class="rules">
+          <li>Dilarang menawarkan joki galbay, jasa hapus SLIK, atau pinjaman talangan.</li>
+          <li>Jangan membagikan nomor rekening, KTP, atau kode OTP.</li>
+          <li>Dilarang menagih atau mempermalukan anggota lain.</li>
+          <li>Saling mendukung dengan sopan. Laporkan penawaran mencurigakan ke admin.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <div class="kicker">Bantuan</div>
+      <h2>Jika kamu butuh segera</h2>
+      <p class="sub">Simpan nomor-nomor ini. Kamu tidak harus menunggu sampai kondisinya terlalu berat.</p>
+      <div class="glass">
+        <div class="contact"><span>Konseling jiwa (SEJIWA, Kemenkes)</span><a href="tel:119">119 ext 8</a></div>
+        <div class="contact"><span>Kontak OJK</span><a href="tel:157">157</a></div>
+        <div class="contact"><span>WhatsApp resmi OJK</span><a href="https://wa.me/6281157157157">081-157-157-157</a></div>
+        <div class="contact"><span>Email konsumen OJK</span><a href="mailto:konsumen@ojk.go.id">konsumen@ojk.go.id</a></div>
+        <div class="contact"><span>Kepolisian (darurat)</span><a href="tel:110">110</a></div>
+      </div>
+    </section>
+
+    <p class="disclaimer reveal">
+      Buku dan komunitas ini bersifat edukasi dan dukungan sesama. Keduanya bukan pengganti nasihat hukum, keuangan, atau psikologi profesional.
+    </p>
+
+  </main>
+
+  <footer>&copy; GRACELYN WINATA &middot; SEMUA HAK DILINDUNGI</footer>
+
+  <!-- Tombol melayang di bawah layar, hanya tampil di HP -->
+  <div class="dock" role="navigation" aria-label="Akses cepat">
+    <a href="https://drive.google.com/file/d/1J5OHbr0DFiXjQG4jfVEyMuNMikYTbmB_/view?usp=sharing" target="_blank" rel="noopener">Baca ebook</a>
+    <a class="alt" href="https://t.me/+-oTlnezT0UFiMzk1" target="_blank" rel="noopener">Komunitas</a>
+  </div>
+
+<script>
+  // Kemunculan bertahap saat di-scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+  // Progres langkah
+  const checks = [...document.querySelectorAll('.step-check')];
+  const bar = document.getElementById('progressBar');
+  const label = document.getElementById('progressLabel');
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('lunas-progress') || '[]'); } catch (e) {}
+  checks.forEach((c, i) => { c.checked = saved.includes(i); });
+
+  function updateProgress() {
+    const done = checks.filter(c => c.checked).length;
+    bar.style.width = (done / checks.length * 100) + '%';
+    label.textContent = done + ' dari ' + checks.length + ' langkah selesai';
+    const state = checks.map((c, i) => c.checked ? i : -1).filter(i => i >= 0);
+    try { localStorage.setItem('lunas-progress', JSON.stringify(state)); } catch (e) {}
+  }
+  checks.forEach(c => c.addEventListener('change', updateProgress));
+  updateProgress();
+</script>
+</body>
+</html>

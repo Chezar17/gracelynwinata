@@ -103,14 +103,18 @@
   .cta-note { position: relative; z-index: 2; margin-top: 12px; font-size: 13px; color: var(--ink-soft); }
 
   /* Sticker mengambang */
+  .stickers {
+    position: relative; z-index: 2;
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px;
+  }
   .sticker {
-    position: absolute; z-index: 2; background: #fff; border-radius: 16px;
-    padding: 10px 14px; font-size: 13px; font-weight: 700;
-    box-shadow: 0 12px 26px rgba(27,27,58,0.12);
+    display: inline-block; background: #fff; border-radius: 16px;
+    padding: 9px 14px; font-size: 13px; font-weight: 700;
+    box-shadow: 0 10px 22px rgba(27,27,58,0.10);
     animation: floatY 5s ease-in-out infinite;
   }
-  .sticker.s1 { top: 40px; right: 16px; transform: rotate(4deg); }
-  .sticker.s2 { top: 360px; right: 18px; animation-delay: -2s; transform: rotate(-3deg); }
+  .sticker.s1 { transform: rotate(-2deg); }
+  .sticker.s2 { animation-delay: -2s; transform: rotate(2deg); }
 
   /* ---------- MARQUEE ---------- */
   .marquee { background: var(--ink); color: #fff; overflow: hidden; white-space: nowrap; padding: 16px 0; transform: rotate(-1.5deg); margin: 10px -20px 0; }
@@ -266,7 +270,6 @@
     .dock { display: none; }
     body { padding-bottom: 0; }
     .hero { padding: 60px 0 90px; }
-    .sticker.s2 { top: 420px; }
     .grid { grid-template-columns: 1fr 1fr; }
   }
   @media (hover: none) {
@@ -292,13 +295,15 @@
 
     <h1 class="hook">Pinjol menumpuk? <br><span class="mark">Ini bukan akhir.</span></h1>
     <p class="sub">Mulai dari satu langkah kecil hari ini. Kamu bisa keluar dari tekanan ini dengan rencana yang jelas, dan tidak perlu menanggungnya sendirian.</p>
+    <div class="stickers">
+      <div class="sticker s1">Langsung bisa dibaca 📱</div>
+      <div class="sticker s2">Bukan sendirian 🤝</div>
+    </div>
 
     <a class="cta-main" href="http://lynk.id/gracelynwinata/vd81kyqykzy7/checkout">Mulai langkahku sekarang &rarr;</a>
     <p class="cta-note">Pembayaran diproses melalui lynk.id</p>
   </div>
 
-  <div class="sticker s1">Langsung bisa dibaca 📱</div>
-  <div class="sticker s2">Bukan sendirian 🤝</div>
 </header>
 
 <div class="marquee" aria-hidden="true">

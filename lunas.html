@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#FFF7EE">
+<meta name="description" content="Hutang pinjol menumpuk? Mulai langkah lunasmu hari ini. Panduan praktis + komunitas saling bantu.">
+<meta property="og:title" content="Lunas dari Pinjol | Mulai langkah lunasmu hari ini">
+<meta property="og:description" content="Hutang pinjol menumpuk? Kamu tidak harus menyelesaikannya sendirian.">
+<meta property="og:type" content="website">
+<title>Lunas dari Pinjol | Mulai Hari Ini</title>
+<style>
+  :root {
+    --cream: #FFF7EE;
+    --paper: #FFFFFF;
+    --ink: #1B1B3A;
+    --ink-soft: #55557A;
+    --coral: #FF6B3D;
+    --amber: #FFB547;
+    --teal: #13C2A3;
+    --pink: #FF7AB6;
+    --lavender: #EEE9FF;
+    --mint: #E3FBF5;
+    --radius: 22px;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --safe-b: env(safe-area-inset-bottom, 0px);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: calc(92px + var(--safe-b));
+  }
+  a { color: inherit; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 0 20px; position: relative; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    position: relative;
+    padding: 34px 0 60px;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(255,181,71,0.45), transparent 42%),
+      radial-gradient(circle at 90% 30%, rgba(19,194,163,0.35), transparent 40%),
+      radial-gradient(circle at 50% 100%, rgba(255,122,182,0.35), transparent 45%),
+      var(--cream);
+  }
+  .blob {
+    position: absolute; border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%;
+    filter: blur(0px); opacity: 0.9; pointer-events: none;
+    animation: morph 12s ease-in-out infinite;
+  }
+  .blob.b1 { width: 260px; height: 260px; background: linear-gradient(135deg, var(--amber), var(--coral)); top: -90px; right: -80px; }
+  .blob.b2 { width: 200px; height: 200px; background: linear-gradient(135deg, var(--teal), #7CE8D5); top: 280px; left: -90px; animation-delay: -5s; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; position: relative; z-index: 2; }
+  .logo { font-weight: 800; font-size: 15px; letter-spacing: 0.3px; }
+  .logo span { color: var(--coral); }
+  .pill {
+    font-size: 12px; font-weight: 700; background: var(--ink); color: #fff;
+    padding: 7px 12px; border-radius: 999px; animation: pulseDot 2.4s ease-in-out infinite;
+  }
+
+  .hook {
+    position: relative; z-index: 2;
+    font-size: clamp(34px, 10vw, 54px);
+    font-weight: 900; line-height: 1.05; letter-spacing: -0.5px;
+    animation: rise 0.8s 0.1s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .hook .mark {
+    background: linear-gradient(transparent 58%, rgba(255,181,71,0.85) 58%);
+    padding: 0 4px;
+  }
+  .sub {
+    position: relative; z-index: 2;
+    margin-top: 18px; font-size: 17px; color: var(--ink-soft); max-width: 520px;
+    animation: rise 0.8s 0.25s cubic-bezier(.2,.8,.2,1) both;
+  }
+
+  .cta-main {
+    position: relative; z-index: 2;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 28px; width: 100%; max-width: 420px; min-height: 60px; padding: 18px 24px;
+    border-radius: 18px; text-decoration: none; color: #fff; font-weight: 800; font-size: 18px;
+    background: linear-gradient(100deg, var(--coral), #FF8F5A, var(--coral));
+    background-size: 200% auto;
+    box-shadow: 0 14px 30px rgba(255,107,61,0.35);
+    overflow: hidden;
+    animation: rise 0.8s 0.4s cubic-bezier(.2,.8,.2,1) both, glowPulse 2.8s ease-in-out infinite;
+    transition: transform 0.15s ease;
+  }
+  .cta-main::after {
+    content: ""; position: absolute; top: 0; left: -80%; width: 45%; height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+    transform: skewX(-20deg); animation: swipe 3.4s ease-in-out infinite;
+  }
+  .cta-main:active { transform: scale(0.97); }
+  .cta-note { position: relative; z-index: 2; margin-top: 12px; font-size: 13px; color: var(--ink-soft); }
+
+  /* Sticker mengambang */
+  .sticker {
+    position: absolute; z-index: 2; background: #fff; border-radius: 16px;
+    padding: 10px 14px; font-size: 13px; font-weight: 700;
+    box-shadow: 0 12px 26px rgba(27,27,58,0.12);
+    animation: floatY 5s ease-in-out infinite;
+  }
+  .sticker.s1 { top: 40px; right: 16px; transform: rotate(4deg); }
+  .sticker.s2 { top: 360px; right: 18px; animation-delay: -2s; transform: rotate(-3deg); }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee { background: var(--ink); color: #fff; overflow: hidden; white-space: nowrap; padding: 16px 0; transform: rotate(-1.5deg); margin: 10px -20px 0; }
+  .marquee-track { display: inline-block; animation: marquee 22s linear infinite; font-weight: 700; font-size: 15px; }
+  .marquee-track span { margin-right: 26px; }
+  .marquee-track span::after { content: "✦"; margin-left: 26px; color: var(--amber); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 56px 0; }
+  .kicker { font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+  h2 { font-size: clamp(26px, 7vw, 34px); font-weight: 900; line-height: 1.12; letter-spacing: -0.3px; margin-bottom: 12px; }
+  .lead { color: var(--ink-soft); font-size: 16px; margin-bottom: 26px; }
+
+  /* Kartu manfaat */
+  .grid { display: grid; gap: 14px; }
+  .card {
+    background: var(--paper); border-radius: var(--radius); padding: 20px;
+    box-shadow: 0 8px 24px rgba(27,27,58,0.06);
+    display: flex; gap: 16px; align-items: flex-start;
+  }
+  .card .ico {
+    flex-shrink: 0; width: 52px; height: 52px; border-radius: 16px;
+    display: grid; place-items: center; font-size: 24px;
+    animation: bob 4s ease-in-out infinite;
+  }
+  .card:nth-child(2) .ico { animation-delay: -1s; }
+  .card:nth-child(3) .ico { animation-delay: -2s; }
+  .card:nth-child(4) .ico { animation-delay: -3s; }
+  .card h3 { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+  .card p { font-size: 14px; color: var(--ink-soft); }
+  .c-amber { background: #FFF1D6; }
+  .c-teal { background: var(--mint); }
+  .c-pink { background: #FFE3F0; }
+  .c-lav { background: var(--lavender); }
+
+  /* Yang kamu dapatkan */
+  .got { background: var(--ink); color: #fff; border-radius: 28px; padding: 28px 22px; position: relative; overflow: hidden; }
+  .got::before { content: ""; position: absolute; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(255,181,71,0.35), transparent 70%); top: -80px; right: -60px; animation: drift 10s ease-in-out infinite; }
+  .got h2 { color: #fff; position: relative; }
+  .got .lead { color: #C7C9E6; position: relative; }
+  .checklist { list-style: none; position: relative; display: grid; gap: 12px; }
+  .checklist li {
+    display: flex; gap: 12px; align-items: center; font-weight: 600; font-size: 16px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    padding: 14px 16px; border-radius: 16px;
+    opacity: 0; transform: translateX(-16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .checklist li.in { opacity: 1; transform: none; }
+  .checklist .tick {
+    flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--teal); display: grid; place-items: center; font-size: 14px; font-weight: 900; color: var(--ink);
+  }
+
+  /* Langkah */
+  .steps { display: grid; gap: 0; position: relative; }
+  .step { display: flex; gap: 16px; padding-bottom: 26px; position: relative; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before {
+    content: ""; position: absolute; left: 21px; top: 46px; bottom: 0; width: 3px;
+    background: repeating-linear-gradient(to bottom, var(--coral) 0 8px, transparent 8px 16px);
+    animation: dash 1.2s linear infinite;
+  }
+  .step:last-child::before { display: none; }
+  .num {
+    flex-shrink: 0; width: 46px; height: 46px; border-radius: 16px;
+    background: linear-gradient(135deg, var(--coral), var(--amber)); color: #fff;
+    display: grid; place-items: center; font-weight: 900; font-size: 18px;
+    box-shadow: 0 8px 18px rgba(255,107,61,0.3);
+  }
+  .step h3 { font-size: 17px; font-weight: 800; margin-bottom: 3px; }
+  .step p { font-size: 14px; color: var(--ink-soft); }
+
+  /* Kutipan */
+  .quote {
+    background: linear-gradient(135deg, var(--lavender), #FFE3F0);
+    border-radius: 26px; padding: 28px 22px; text-align: center;
+  }
+  .quote .q { font-size: 20px; font-weight: 800; line-height: 1.35; }
+  .quote .by { margin-top: 12px; font-size: 13px; font-weight: 700; color: var(--ink-soft); }
+
+  /* FAQ */
+  details { background: var(--paper); border-radius: 18px; padding: 18px 20px; margin-bottom: 12px; box-shadow: 0 6px 18px rgba(27,27,58,0.05); }
+  summary { font-weight: 800; font-size: 16px; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 22px; color: var(--coral); transition: transform 0.3s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: 10px; font-size: 14px; color: var(--ink-soft); }
+
+  /* CTA akhir */
+  .final {
+    text-align: center; background: linear-gradient(135deg, var(--coral), var(--amber));
+    color: #fff; border-radius: 30px; padding: 40px 24px; position: relative; overflow: hidden;
+  }
+  .final::before, .final::after {
+    content: ""; position: absolute; border-radius: 50%; background: rgba(255,255,255,0.14);
+    animation: floatY 6s ease-in-out infinite;
+  }
+  .final::before { width: 160px; height: 160px; top: -60px; left: -40px; }
+  .final::after { width: 120px; height: 120px; bottom: -40px; right: -20px; animation-delay: -3s; }
+  .final h2 { color: #fff; position: relative; }
+  .final p { position: relative; font-size: 16px; opacity: 0.95; margin-bottom: 24px; }
+  .btn-white {
+    position: relative; display: inline-flex; align-items: center; justify-content: center;
+    width: 100%; max-width: 380px; min-height: 58px; padding: 16px 22px; border-radius: 18px;
+    background: #fff; color: var(--coral); font-weight: 900; font-size: 17px; text-decoration: none;
+    box-shadow: 0 12px 26px rgba(0,0,0,0.15); transition: transform 0.15s ease;
+  }
+  .btn-white:active { transform: scale(0.97); }
+
+  footer { text-align: center; font-size: 12px; color: var(--ink-soft); padding: 34px 20px 10px; line-height: 1.7; }
+
+  /* ---------- STICKY CTA (HP) ---------- */
+  .dock {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 12px 16px calc(12px + var(--safe-b));
+    background: rgba(255,247,238,0.92);
+    border-top: 1px solid rgba(27,27,58,0.08);
+    transform: translateY(0); transition: transform 0.4s ease;
+  }
+  .dock.hide { transform: translateY(120%); }
+  .dock a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    min-height: 54px; border-radius: 16px; text-decoration: none;
+    background: linear-gradient(100deg, var(--coral), var(--amber)); color: #fff;
+    font-weight: 900; font-size: 16px; box-shadow: 0 10px 22px rgba(255,107,61,0.3);
+  }
+  .dock a:active { transform: scale(0.97); }
+
+  /* ---------- REVEAL ---------- */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ---------- KEYFRAMES ---------- */
+  @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  @keyframes morph {
+    0%, 100% { border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; transform: rotate(0deg); }
+    50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(20deg); }
+  }
+  @keyframes floatY { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes bob { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-4px) rotate(-4deg); } }
+  @keyframes drift { 0%, 100% { transform: translate(0,0); } 50% { transform: translate(-30px, 20px); } }
+  @keyframes swipe { 0%, 55% { left: -80%; } 100% { left: 130%; } }
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 14px 30px rgba(255,107,61,0.35); }
+    50% { box-shadow: 0 18px 44px rgba(255,107,61,0.6); }
+  }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes pulseDot { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+  @keyframes dash { to { background-position: 0 16px; } }
+
+  @media (min-width: 720px) {
+    .dock { display: none; }
+    body { padding-bottom: 0; }
+    .hero { padding: 60px 0 90px; }
+    .sticker.s2 { top: 420px; }
+    .grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (hover: none) {
+    .blob { filter: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .reveal, .checklist li { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="logo">Lunas<span>.</span></div>
+      <div class="pill">Untuk kamu yang sedang berjuang</div>
+    </div>
+
+    <h1 class="hook">Pinjol menumpuk? <br><span class="mark">Ini bukan akhir.</span></h1>
+    <p class="sub">Mulai dari satu langkah kecil hari ini. Kamu bisa keluar dari tekanan ini dengan rencana yang jelas, dan tidak perlu menanggungnya sendirian.</p>
+
+    <a class="cta-main" href="http://lynk.id/gracelynwinata/vd81kyqykzy7/checkout">Mulai langkahku sekarang &rarr;</a>
+    <p class="cta-note">Pembayaran diproses melalui lynk.id</p>
+  </div>
+
+  <div class="sticker s1">Langsung bisa dibaca 📱</div>
+  <div class="sticker s2">Bukan sendirian 🤝</div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Hitung ulang hutangmu</span><span>Negosiasi dengan tenang</span><span>Langkah yang jelas</span><span>Bukan sendirian</span><span>Rencana lunas</span><span>Dari HP atau laptop</span>
+    <span>Hitung ulang hutangmu</span><span>Negosiasi dengan tenang</span><span>Langkah yang jelas</span><span>Bukan sendirian</span><span>Rencana lunas</span><span>Dari HP atau laptop</span>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section class="reveal">
+    <div class="kicker">Kenapa ini untukmu</div>
+    <h2>Bukan soal pintar keuangan. Soal berani mulai.</h2>
+    <p class="lead">Banyak orang tidak kekurangan kemauan. Yang mereka butuhkan hanyalah peta yang jelas dan bahasa yang tidak menghakimi.</p>
+    <div class="grid">
+      <div class="card"><div class="ico c-amber">🧭</div><div><h3>Ada peta yang jelas</h3><p>Dari menghitung kondisi sampai langkah berikutnya, semuanya urut dan bisa diikuti.</p></div></div>
+      <div class="card"><div class="ico c-teal">💬</div><div><h3>Bahasa yang ramah</h3><p>Ditulis seperti teman yang paham, bukan seperti buku yang menggurui.</p></div></div>
+      <div class="card"><div class="ico c-pink">⚡</div><div><h3>Bisa langsung dipakai</h3><p>Ada templat dan contoh yang siap kamu pakai hari ini juga.</p></div></div>
+      <div class="card"><div class="ico c-lav">🫶</div><div><h3>Ada teman seperjalanan</h3><p>Kamu bisa bergabung dengan orang lain yang sedang menghadapi hal serupa.</p></div></div>
+    </div>
+  </section>
+
+  <section class="got reveal">
+    <div class="kicker" style="color:#FFB547">Yang kamu dapatkan</div>
+    <h2>Semua yang kamu butuhkan, dalam satu tempat.</h2>
+    <p class="lead">Setelah pembayaran, kamu langsung menerima akses sesuai instruksi di halaman checkout.</p>
+    <ul class="checklist" id="checklist">
+      <li><span class="tick">✓</span> Ebook panduan PDF yang bisa dibaca di HP maupun laptop</li>
+      <li><span class="tick">✓</span> Templat surat siap pakai untuk menghubungi penyedia pinjaman</li>
+      <li><span class="tick">✓</span> Akses ke grup "Saling Bantu Yuk!!" di Telegram</li>
+      <li><span class="tick">✓</span> Kanal bantuan untuk tukar informasi dengan sesama anggota</li>
+      <li><span class="tick">✓</span> Daftar kontak resmi untuk bantuan yang bisa kamu hubungi kapan saja</li>
+    </ul>
+  </section>
+
+  <section class="reveal">
+    <div class="kicker">Mulai dari mana?</div>
+    <h2>Tiga langkah, dimulai hari ini.</h2>
+    <p class="lead">Tidak perlu persiapan rumit. Cukup mulai dari langkah pertama.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><div><h3>Klik tombol dan lakukan pembayaran</h3><p>Prosesnya dilakukan melalui halaman checkout lynk.id.</p></div></div>
+      <div class="step"><div class="num">2</div><div><h3>Terima akses kamu</h3><p>Ikuti instruksi yang muncul setelah pembayaran berhasil.</p></div></div>
+      <div class="step"><div class="num">3</div><div><h3>Mulai langkah pertamamu</h3><p>Hitung kondisimu dengan tenang, lalu lanjutkan satu langkah demi satu langkah.</p></div></div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="quote">
+      <p class="q">"Kamu tidak perlu sempurna untuk mulai. Kamu hanya perlu tidak diam sendirian."</p>
+      <p class="by">Gracelyn Winata, penulis</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="kicker">Pertanyaan umum</div>
+    <h2>Masih ragu?</h2>
+    <p class="lead" style="margin-bottom:18px;">Ini jawaban untuk pertanyaan yang sering muncul.</p>
+    <details>
+      <summary>Apakah ini cocok untuk saya?</summary>
+      <p>Cocok untuk kamu yang sedang punya beberapa pinjaman online, bingung menghitungnya, atau takut membicarakan masalah ini.</p>
+    </details>
+    <details>
+      <summary>Apakah ini pengganti konsultan atau pengacara?</summary>
+      <p>Tidak. Ini adalah panduan edukasi. Untuk kondisi yang rumit, tetap konsultasikan dengan profesional yang kompeten.</p>
+    </details>
+    <details>
+      <summary>Bisa dibaca di HP?</summary>
+      <p>Bisa. File PDF nyaman dibaca di HP maupun laptop, dan bisa dibuka kapan saja.</p>
+    </details>
+    <details>
+      <summary>Bagaimana jika saya sedang sangat tertekan?</summary>
+      <p>Kamu tidak sendirian. Jika kondisimu sangat berat, hubungi layanan konseling jiwa SEJIWA di 119 ekstensi 8 atau orang terdekat sekarang juga.</p>
+    </details>
+  </section>
+
+  <section class="reveal">
+    <div class="final">
+      <h2>Satu langkah hari ini, lebih ringan besok.</h2>
+      <p>Jangan tunggu sampai tagihan berikutnya datang. Mulai sekarang.</p>
+      <a class="btn-white" href="http://lynk.id/gracelynwinata/vd81kyqykzy7/checkout">Mulai langkahku sekarang &rarr;</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © Gracelyn Winata. Semua hak dilindungi.<br>
+  Buku ini bersifat edukasi dan bukan pengganti nasihat hukum, keuangan, atau psikologi profesional.
+</footer>
+
+<div class="dock" id="dock">
+  <a href="http://lynk.id/gracelynwinata/vd81kyqykzy7/checkout">Mulai langkahku sekarang &rarr;</a>
+</div>
+
+<script>
+  // Kemunculan bagian saat di-scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+  // Daftar centang muncul satu per satu
+  const items = document.querySelectorAll('#checklist li');
+  const listObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      items.forEach((li, i) => setTimeout(() => li.classList.add('in'), i * 180));
+      listObs.disconnect();
+    }
+  }, { threshold: 0.4 });
+  if (items.length) listObs.observe(document.getElementById('checklist'));
+
+  // Tombol melayang di HP: sembunyi saat di bagian akhir (ada tombol besar)
+  const dock = document.getElementById('dock');
+  const finalBtn = document.querySelector('.final');
+  const dockObs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => dock.classList.toggle('hide', e.isIntersecting));
+  }, { threshold: 0.2 });
+  if (finalBtn) dockObs.observe(finalBtn);
+</script>
+</body>
+</html>

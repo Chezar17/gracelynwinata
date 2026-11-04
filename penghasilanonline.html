@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panduan Penghasilan Online Indonesia | Gracelyn Winata</title>
+<meta name="description" content="42 metode menghasilkan uang online di Indonesia tanpa kualifikasi khusus, dengan langkah, tips, estimasi pendapatan, dan peringatan penipuan.">
+<style>
+  :root {
+    --bg: #f6f8ff;
+    --ink: #14183a;
+    --muted: #5d6385;
+    --card: #ffffff;
+    --line: #e4e8f7;
+    --brand: #5b4bf5;
+    --brand2: #16b8e0;
+    --mint: #17c7a0;
+    --sun: #ffb020;
+    --rose: #ff5c8a;
+    --soft-green: #e9fbf4;
+    --soft-amber: #fff6e0;
+    --soft-red: #fff0f4;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(20, 24, 58, 0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", "Inter", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  a { color: var(--brand); }
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-weight: 800; color: var(--brand); text-decoration: none; font-size: 1.05rem; }
+  .nav-links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 0.92rem; font-weight: 600; }
+  .nav-links a:hover { color: var(--brand); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #5b4bf5 0%, #16b8e0 60%, #17c7a0 100%);
+    color: #fff; padding: 84px 0 96px; position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: ""; position: absolute; right: -140px; top: -140px;
+    width: 460px; height: 460px; border-radius: 50%; background: rgba(255,255,255,0.12);
+  }
+  .hero::before {
+    content: ""; position: absolute; left: -90px; bottom: -120px;
+    width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.08);
+  }
+  .badge {
+    display: inline-block; padding: 7px 14px; border-radius: 999px;
+    background: rgba(255,255,255,0.2); font-size: 0.85rem; font-weight: 700; margin-bottom: 20px;
+  }
+  .hook { font-size: clamp(2rem, 4.6vw, 3.1rem); line-height: 1.18; font-weight: 800; max-width: 880px; position: relative; z-index: 1; }
+  .hook .hl { color: #fff7c2; }
+  .hook-sub { margin-top: 20px; font-size: 1.08rem; max-width: 720px; opacity: 0.96; position: relative; z-index: 1; }
+  .author { margin-top: 28px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+  .avatar {
+    width: 48px; height: 48px; border-radius: 50%; background: #fff; color: var(--brand);
+    font-weight: 800; display: grid; place-items: center; font-size: 1.05rem;
+  }
+  .author strong { display: block; }
+  .author span { font-size: 0.9rem; opacity: 0.9; }
+  .hero-stats { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; position: relative; z-index: 1; }
+  .stat { background: rgba(255,255,255,0.18); border-radius: 14px; padding: 14px 18px; min-width: 130px; }
+  .stat b { font-size: 1.5rem; display: block; }
+  .stat span { font-size: 0.85rem; opacity: 0.92; }
+
+  section { padding: 64px 0; }
+  .section-title { font-size: 2rem; font-weight: 800; margin-bottom: 8px; }
+  .section-sub { color: var(--muted); margin-bottom: 30px; max-width: 720px; font-size: 1.02rem; }
+
+  /* GENERAL CARDS */
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+  .box .icon {
+    width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center;
+    background: #ece9ff; color: var(--brand); font-weight: 800; margin-bottom: 14px;
+  }
+  .box h3 { font-size: 1.05rem; margin-bottom: 6px; }
+  .box p { color: var(--muted); font-size: 0.95rem; }
+
+  /* FILTERS */
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  .filters button {
+    border: 1px solid var(--line); background: #fff; color: var(--ink);
+    padding: 9px 16px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; cursor: pointer;
+    font-family: inherit; transition: all 0.2s;
+  }
+  .filters button:hover { border-color: var(--brand); color: var(--brand); }
+  .filters button.active { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+  /* METHOD CARDS */
+  .methods { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 22px; }
+  .method {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: 26px; display: flex; flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .method:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(20,24,58,0.12); }
+  .method-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+  .method h3 { font-size: 1.22rem; font-weight: 800; }
+  .tag {
+    font-size: 0.74rem; font-weight: 700; padding: 5px 11px; border-radius: 999px; white-space: nowrap;
+    background: #ece9ff; color: var(--brand);
+  }
+  .tag.pasif { background: var(--soft-green); color: #0d8f70; }
+  .tag.aktif { background: var(--soft-red); color: var(--rose); }
+  .tag.investasi { background: var(--soft-amber); color: #b57400; }
+  .what { color: var(--muted); font-size: 0.95rem; margin-bottom: 16px; }
+
+  .income {
+    background: linear-gradient(135deg, #f0fdf9, #eef6ff);
+    border: 1px solid #cdeee3; border-radius: 14px; padding: 14px 16px; margin-bottom: 14px;
+  }
+  .income .lbl { color: var(--muted); font-size: 0.8rem; font-weight: 600; }
+  .income .amt { color: #0d8f70; font-size: 1.35rem; font-weight: 800; }
+  .income .note { color: var(--muted); font-size: 0.85rem; }
+
+  .req { font-size: 0.9rem; color: var(--muted); margin-bottom: 14px; }
+  .req b { color: var(--ink); }
+
+  .sec-label { font-weight: 700; font-size: 0.92rem; margin: 12px 0 6px; color: var(--ink); }
+  ol.steps { list-style: none; counter-reset: st; }
+  ol.steps li {
+    counter-increment: st; position: relative; padding-left: 34px; margin-bottom: 8px; font-size: 0.93rem; color: #33395f;
+  }
+  ol.steps li::before {
+    content: counter(st); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 8px;
+    background: var(--brand); color: #fff; font-size: 0.8rem; font-weight: 700; display: grid; place-items: center;
+  }
+  ul.tips { list-style: none; }
+  ul.tips li { position: relative; padding-left: 22px; margin-bottom: 6px; font-size: 0.93rem; color: #1f5c48; }
+  ul.tips li::before { content: "✓"; position: absolute; left: 0; color: var(--mint); font-weight: 800; }
+  .tips-box { background: #f0fdf9; border-radius: 12px; padding: 12px 14px; margin-top: 10px; }
+  .tips-box .sec-label { margin-top: 0; color: #0d8f70; }
+
+  .warn {
+    background: var(--soft-red); border-radius: 12px; padding: 10px 14px; margin-top: 10px;
+    font-size: 0.88rem; color: #8a2448;
+  }
+  .warn b { font-weight: 700; }
+
+  .m-foot { margin-top: auto; padding-top: 18px; }
+  .btn {
+    display: inline-block; background: linear-gradient(90deg, var(--brand), var(--brand2));
+    color: #fff; text-decoration: none; font-weight: 700; padding: 10px 18px; border-radius: 10px; font-size: 0.92rem;
+  }
+  .btn:hover { opacity: 0.92; }
+  .nolink { color: var(--muted); font-size: 0.85rem; }
+
+  /* QUICK START */
+  .quick { background: linear-gradient(135deg, #eef0ff, #e6fbff); }
+  .quick-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+  .quick-item .num {
+    font-weight: 800; color: #fff; background: var(--brand); border-radius: 10px;
+    min-width: 36px; height: 36px; display: grid; place-items: center;
+  }
+  .quick-item h3 { font-size: 1rem; }
+  .quick-item p { color: var(--muted); font-size: 0.92rem; }
+
+  /* SCAM */
+  .scam { background: linear-gradient(135deg, #fff0f4, #fff6e0); }
+  .scam-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+  .scam-item { background: #fff; border-radius: 16px; padding: 22px; box-shadow: var(--shadow); }
+  .scam-item h3 { font-size: 1rem; margin-bottom: 6px; color: #c2185b; }
+  .scam-item p { color: var(--muted); font-size: 0.93rem; }
+
+  .disclaimer {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; color: var(--muted); font-size: 0.92rem;
+  }
+  .disclaimer strong { color: var(--ink); }
+
+  footer { background: var(--ink); color: #c9cde8; padding: 40px 0; margin-top: 40px; }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  footer strong { color: #fff; }
+
+  .empty { display: none; color: var(--muted); padding: 20px 0; }
+
+  @media (max-width: 640px) {
+    .nav-links a { display: none; }
+    .methods { grid-template-columns: 1fr; }
+    .hero { padding: 60px 0 70px; }
+    section { padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top">Panduan Penghasilan Online</a>
+    <div class="nav-links">
+      <a href="#cara-pakai">Cara Pakai</a>
+      <a href="#metode">Metode</a>
+      <a href="#mulai-cepat">Mulai Cepat</a>
+      <a href="#penipuan">Waspada Penipuan</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="badge">Panduan Praktis 2026</span>
+    <h1 class="hook">
+      Tanpa ijazah, tanpa gelar, tanpa modal besar.<br>
+      Cukup <span class="hl">HP</span> atau laptop, koneksi internet, dan kemauan untuk konsisten.
+    </h1>
+    <p class="hook-sub">42 cara menghasilkan uang online di Indonesia, dari aplikasi pasif, survei, kerja AI, freelance, jualan produk digital, sampai afiliasi dan cashback. Setiap metode dilengkapi estimasi pendapatan, langkah demi langkah, tips, dan peringatan agar kamu tidak tertipu.</p>
+    <div class="author">
+      <div class="avatar">GW</div>
+      <div>
+        <strong>Ditulis oleh Gracelyn Winata</strong>
+        <span>Penulis panduan penghasilan online</span>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>42</b><span>Metode</span></div>
+      <div class="stat"><b>8</b><span>Kategori</span></div>
+      <div class="stat"><b>3-5</b><span>Langkah per metode</span></div>
+      <div class="stat"><b>0</b><span>Syarat ijazah</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="cara-pakai">
+  <div class="wrap">
+    <h2 class="section-title">Cara memakai panduan ini</h2>
+    <p class="section-sub">Mulai dari yang paling sesuai dengan kondisimu sekarang.</p>
+    <div class="grid-3">
+      <div class="box">
+        <div class="icon">1</div>
+        <h3>Pilih sesuai alatmu</h3>
+        <p>Hanya punya HP? Mulai dari metode pasif atau survei. Punya laptop? Freelance dan kerja AI biasanya menghasilkan lebih.</p>
+      </div>
+      <div class="box">
+        <div class="icon">2</div>
+        <h3>Cek syarat di setiap kartu</h3>
+        <p>Usia minimal, dokumen, dan batasan negara ada di setiap kartu. Jangan dilewati.</p>
+      </div>
+      <div class="box">
+        <div class="icon">3</div>
+        <h3>Catat dan evaluasi</h3>
+        <p>Catat pendapatan dan waktu yang kamu pakai. Metode yang tidak menghasilkan dalam 30 hari bisa diganti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metode" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="section-title">Metode penghasilan</h2>
+    <p class="section-sub">Pilih kategori untuk menyaring. Angka pendapatan adalah estimasi awal, bukan jaminan.</p>
+    <div class="filters" id="filters">
+      <button class="active" data-cat="all">Semua</button>
+      <button data-cat="pasif">Pasif</button>
+      <button data-cat="survei">Survei</button>
+      <button data-cat="ai">Kerja AI</button>
+      <button data-cat="freelance">Freelance</button>
+      <button data-cat="digital">Produk Digital</button>
+      <button data-cat="afiliasi">Afiliasi</button>
+      <button data-cat="cashback">Cashback</button>
+      <button data-cat="investasi">Investasi</button>
+    </div>
+    <div class="methods" id="methods"></div>
+    <p class="empty" id="empty">Belum ada metode di kategori ini.</p>
+  </div>
+</section>
+
+<section id="mulai-cepat" class="quick">
+  <div class="wrap">
+    <h2 class="section-title">Mulai hari ini dengan HP saja</h2>
+    <p class="section-sub">Lima langkah awal tanpa modal. Hasilnya kecil di awal, jadi lakukan konsisten selama beberapa minggu.</p>
+    <div class="grid-3">
+      <div class="quick-item"><div class="num">1</div><div><h3>Pasang aplikasi bandwidth</h3><p>Pasang satu aplikasi dan biarkan berjalan. Cek saldo mingguan.</p></div></div>
+      <div class="quick-item"><div class="num">2</div><div><h3>Isi profil survei</h3><p>Profil lengkap membuat survei yang cocok lebih sering muncul.</p></div></div>
+      <div class="quick-item"><div class="num">3</div><div><h3>Pakai cashback resmi</h3><p>Setiap belanja, mulai lewat aplikasi cashback resmi.</p></div></div>
+      <div class="quick-item"><div class="num">4</div><div><h3>Tawarkan jasa kecil</h3><p>Buat jasa sederhana di Sribu, lalu kumpulkan ulasan pertama.</p></div></div>
+      <div class="quick-item"><div class="num">5</div><div><h3>Jual barang tidak terpakai</h3><p>Uang pertama paling cepat sering datang dari barang di rumah.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="penipuan" class="scam">
+  <div class="wrap">
+    <h2 class="section-title">Checklist waspada penipuan</h2>
+    <p class="section-sub">Penipuan online sering berpura-pura menjadi kerja mudah. Kalau ada tanda ini, berhenti dan cek ulang.</p>
+    <div class="scam-list">
+      <div class="scam-item"><h3>Minta bayar untuk mulai</h3><p>Pekerjaan sah tidak meminta deposit, paket, atau top-up untuk membuka tugas.</p></div>
+      <div class="scam-item"><h3>Janji untung harian pasti</h3><p>Robot trading atau investasi harian dengan hasil pasti hampir selalu penipuan. Cek legalitas di OJK.</p></div>
+      <div class="scam-item"><h3>Minta kode OTP atau PIN</h3><p>Tidak ada layanan resmi yang meminta kode OTP atau PIN. Jangan pernah membagikannya.</p></div>
+      <div class="scam-item"><h3>Tugas "like" lewat Telegram</h3><p>Setelah beberapa tugas kecil, kamu diminta deposit untuk membuka tugas berikutnya.</p></div>
+      <div class="scam-item"><h3>Pinjol ilegal</h3><p>Pinjol yang tidak terdaftar di OJK sering memakai ancaman dan penyebaran data. Hindari.</p></div>
+      <div class="scam-item"><h3>Situs tanpa identitas jelas</h3><p>Cek nama perusahaan, alamat, dan ulasan independen sebelum mendaftar atau mengunduh.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="disclaimer">
+      <strong>Catatan penting.</strong> Angka pendapatan adalah estimasi kasar dan belum diverifikasi dengan sumber resmi. Hasil setiap orang berbeda tergantung waktu, konsistensi, dan kondisi perangkat. Aplikasi, sistem pembayaran, dan ketersediaan di Indonesia bisa berubah, jadi selalu cek situs resmi sebelum mendaftar. Panduan ini bersifat edukasi dan bukan nasihat keuangan atau pajak. Untuk pajak, konsultasikan dengan konsultan pajak atau kantor pajak setempat.<br><br>
+      <strong>Terakhir diperbarui:</strong> November 2026
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Panduan Penghasilan Online Indonesia</strong><br>Ditulis oleh Gracelyn Winata</div>
+    <div>Hak cipta dilindungi. Dilarang memperbanyak tanpa izin.</div>
+  </div>
+</footer>
+
+<script>
+  const methods = [
+    // PASIF
+    { cat: "pasif", tag: "pasif", name: "Honeygain", what: "Aplikasi yang membagikan sebagian koneksi internet untuk riset data. Dibayar selama aplikasi berjalan.", need: "HP Android atau laptop, internet stabil, minimal 18 tahun", amount: "Rp 15rb - 80rb / bulan", note: "Kecil, sangat bergantung pada perangkat dan jam aktif", steps: ["Daftar di honeygain.com dengan email aktif.", "Pasang aplikasi dan login di satu perangkat utama.", "Biarkan berjalan, lalu cek saldo tiap minggu."], tips: ["Satu akun per perangkat. Akun ganda bisa dibanned.", "Gunakan laptop atau perangkat yang jarang dimatikan.", "Ajak teman lewat kode referral resmi di aplikasi saja."], warn: "Jangan jual akun atau beli saldo dari orang lain. Hindari VPN gratis yang tidak jelas.", link: "https://www.honeygain.com" },
+    { cat: "pasif", tag: "pasif", name: "EarnApp", what: "Aplikasi berbagi bandwidth dengan pembayaran per kilobyte yang digunakan.", need: "Android, Windows, atau Mac, koneksi stabil", amount: "Rp 10rb - 60rb / bulan", note: "Kecil, tergantung lokasi dan jam aktif", steps: ["Daftar di earnapp.com.", "Pasang aplikasi dan hubungkan akun.", "Cek dashboard untuk melihat pendapatan harian."], tips: ["Pakai perangkat yang selalu menyala, misalnya mini PC atau TV box.", "Pantau dashboard memastikan statusnya aktif.", "Bandingkan dengan aplikasi lain selama 30 hari."], warn: "Jangan jalankan di perangkat yang bukan milikmu. Hindari aplikasi tiruan dari link iklan.", link: "https://www.earnapp.com" },
+    { cat: "pasif", tag: "pasif", name: "PacketStream", what: "Layanan berbagi koneksi dengan pembayaran per gigabyte yang dipakai.", need: "Komputer Windows atau Mac, internet stabil", amount: "Rp 10rb - 50rb / bulan", note: "Kecil, bergantung trafik", steps: ["Daftar di packetstream.io.", "Unduh aplikasi desktop dan login.", "Biarkan berjalan, lalu cek saldo di dashboard."], tips: ["Tentukan target saldo sebelum penarikan.", "Gunakan laptop yang tidak sering dimatikan.", "Catat total pendapatan tiap bulan."], warn: "Periksa syarat penarikan dan metode pembayaran untuk Indonesia sebelum mendaftar.", link: "https://packetstream.io" },
+    { cat: "pasif", tag: "pasif", name: "Repocket", what: "Aplikasi berbagi bandwidth dengan pembayaran berdasarkan penggunaan.", need: "Android, Windows, atau Mac, internet stabil", amount: "Rp 10rb - 50rb / bulan", note: "Kecil, mirip aplikasi berbagi bandwidth lain", steps: ["Daftar di repocket.co.", "Pasang aplikasi dan login.", "Cek saldo dan tarik jika sudah mencapai minimal."], tips: ["Cek program referral resmi untuk menambah saldo.", "Jangan pasang banyak aplikasi bandwidth sekaligus di satu jaringan.", "Catat tanggal login agar tidak lupa memperbarui aplikasi."], warn: "Hindari penawaran 'upgrade' berbayar. Aplikasi resmi tidak meminta biaya di awal.", link: "https://repocket.co" },
+
+    // SURVEI
+    { cat: "survei", tag: "aktif", name: "Prolific", what: "Platform riset akademik dan pasar yang membayar peserta untuk mengisi studi.", need: "18 tahun ke atas, email aktif, profil lengkap. Cek ketersediaan untuk Indonesia.", amount: "Rp 30rb - 200rb / bulan", note: "Bervariasi per studi, tergantung jumlah studi yang cocok", steps: ["Daftar di prolific.com dan isi profil selengkap mungkin.", "Lengkapi tes kualifikasi yang muncul.", "Ambil studi yang tersedia dan kerjakan dengan jujur."], tips: ["Profil yang teliti membuat studi lebih sesuai.", "Cek di jam yang sama setiap hari untuk melihat pola studi baru.", "Jawab jujur. Peneliti bisa mendeteksi jawaban asal."], warn: "Jangan membayar untuk mengakses studi. Pastikan negara kamu didukung sebelum daftar.", link: "https://www.prolific.com" },
+    { cat: "survei", tag: "aktif", name: "Toluna", what: "Platform survei pasar global yang membayar opini tentang produk dan layanan.", need: "Usia sesuai aturan negara, email aktif", amount: "Rp 20rb - 150rb / bulan", note: "Kecil sampai sedang, tergantung jumlah survei", steps: ["Daftar di toluna.com.", "Lengkapi profil dan verifikasi email.", "Ikuti survei yang masuk ke email atau dashboard."], tips: ["Profil lengkap membantu mendapat survei yang lebih sesuai.", "Cek email setiap hari karena undangan cepat habis.", "Kumpulkan poin sampai mencapai minimal penarikan."], warn: "Waspadai survei yang meminta nomor KTP atau password.", link: "https://www.toluna.com" },
+    { cat: "survei", tag: "aktif", name: "Survey Junkie", what: "Platform survei singkat dengan imbalan poin yang bisa ditukar.", need: "Email, profil lengkap, usia sesuai aturan", amount: "Rp 15rb - 100rb / bulan", note: "Kecil, berupa poin", steps: ["Daftar di surveyjunkie.com.", "Isi profil awal dan tunggu survei pertama.", "Kerjakan survei dan tukarkan poin sesuai ketentuan."], tips: ["Survei singkat lebih sering muncul dan cepat selesai.", "Tulis jawaban terbuka dengan kalimat lengkap.", "Hindari aplikasi pihak ketiga yang menjanjikan survei otomatis."], warn: "Jika survei meminta bayaran, itu bukan survei resmi.", link: "https://www.surveyjunkie.com" },
+    { cat: "survei", tag: "aktif", name: "Google Opinion Rewards", what: "Aplikasi resmi Google yang memberi hadiah kecil setelah menjawab survei singkat.", need: "HP Android dengan akun Google", amount: "Rp 5rb - 40rb / bulan", note: "Kecil, tidak tersedia di semua wilayah", steps: ["Unduh Google Opinion Rewards dari Play Store.", "Login dengan akun Google.", "Jawab survei yang muncul dan terima hadiahnya."], tips: ["Perbarui aplikasi agar survei yang muncul lebih banyak.", "Jawab saat santai karena survei bisa sangat cepat.", "Cek ketersediaan di wilayahmu."], warn: "Pastikan unduh hanya dari Play Store resmi.", link: "https://play.google.com/store/search?q=Google%20Opinion%20Rewards" },
+    { cat: "survei", tag: "aktif", name: "Clickworker", what: "Platform mikro-tugas seperti riset internet dan penulisan singkat.", need: "Laptop atau komputer, internet, 18 tahun ke atas", amount: "Rp 50rb - 300rb / bulan", note: "Bervariasi, tergantung jenis tugas dan kecepatan", steps: ["Daftar di clickworker.com dan selesaikan tes awal.", "Lihat daftar tugas yang tersedia.", "Kerjakan sesuai instruksi lalu kirim hasilnya."], tips: ["Baca instruksi dengan teliti karena tugas bisa ditolak.", "Kerjakan di jam ketika tugas baru sering muncul.", "Kualitas lebih penting dari kecepatan untuk reputasi."], warn: "Hindari tugas yang meminta login akun bank atau data pribadi sensitif.", link: "https://www.clickworker.com" },
+
+    // AI
+    { cat: "ai", tag: "aktif", name: "Outlier", what: "Platform yang merekrut ahli untuk melatih model AI lewat evaluasi dan penulisan.", need: "Laptop, bahasa Inggris baik, keahlian tertentu, lolos tes", amount: "Rp 1jt - 5jt / bulan", note: "Tergantung proyek dan jam kerja. Tidak ada jaminan.", steps: ["Daftar di outlier.ai dan isi profil keahlian.", "Ikuti tes kualifikasi.", "Jika lolos, ambil proyek sesuai jadwal."], tips: ["Tulis keahlian spesifik di profil, misalnya coding, sains, atau penulisan.", "Ikuti panduan proyek dengan teliti.", "Simpan catatan jam kerja untuk memastikan pembayaran."], warn: "Tidak ada biaya pendaftaran yang sah. Jika diminta bayar untuk tes, itu penipuan.", link: "https://www.outlier.ai" },
+    { cat: "ai", tag: "aktif", name: "DataAnnotation", what: "Platform anotasi data dan evaluasi model AI secara remote.", need: "Laptop, bahasa Inggris baik, lolos tes penilaian", amount: "Rp 1jt - 4jt / bulan", note: "Sedang, tergantung kualitas kerja dan jumlah tugas", steps: ["Daftar di dataannotation.tech.", "Selesaikan tes penilaian dengan serius.", "Setelah diterima, pilih tugas di dashboard."], tips: ["Baca rubrik penilaian sebelum mulai.", "Kerjakan konsisten agar mendapat tugas lebih banyak.", "Simpan salinan tugas yang kamu kirim."], warn: "Waspadai pihak yang menghubungi lewat WhatsApp atau Telegram dan menjanjikan diterima tanpa tes.", link: "https://www.dataannotation.tech" },
+    { cat: "ai", tag: "aktif", name: "Remotasks", what: "Platform kerja data untuk pelatihan AI, termasuk anotasi gambar, teks, dan audio.", need: "Komputer atau HP, internet stabil, bisa membaca instruksi Inggris", amount: "Rp 500rb - 3jt / bulan", note: "Kecil sampai sedang, tergantung jenis tugas", steps: ["Daftar di remotasks.com.", "Selesaikan tugas pelatihan awal.", "Ambil tugas yang sesuai kemampuanmu."], tips: ["Mulai dari tugas dasar untuk membangun akurasi.", "Cek ketersediaan tugas di jam berbeda.", "Pelajari kriteria akurasi agar hasilmu diterima."], warn: "Periksa ketersediaan layanan di negaramu karena bisa berubah.", link: "https://www.remotasks.com" },
+    { cat: "ai", tag: "aktif", name: "Appen", what: "Perusahaan data AI global yang merekrut kontributor untuk anotasi, transkripsi, dan evaluasi.", need: "Komputer atau HP, bahasa sesuai proyek, lolos tes", amount: "Rp 500rb - 3jt / bulan", note: "Bervariasi, tergantung proyek dan bahasa", steps: ["Daftar di appen.com dan cari program kontributor.", "Isi profil bahasa dan keahlian.", "Ikuti tes dan ambil proyek yang sesuai."], tips: ["Kuasai lebih dari satu bahasa, karena proyek bahasa lokal sering tersedia.", "Lengkapi profil agar peluang proyek lebih besar.", "Ikuti pedoman kerja dengan ketat."], warn: "Pastikan halaman yang kamu buka benar-benar milik Appen sebelum memasukkan data.", link: "https://www.appen.com" },
+    { cat: "ai", tag: "aktif", name: "Toloka", what: "Platform crowdsourcing untuk tugas pelatihan AI seperti pelabelan gambar dan evaluasi hasil pencarian.", need: "Komputer atau HP, internet, email", amount: "Rp 300rb - 2jt / bulan", note: "Berbasis tugas, bisa naik dengan reputasi", steps: ["Daftar di toloka.ai.", "Pilih proyek dan baca instruksinya.", "Selesaikan tugas dan kumpulkan bonus jika ada."], tips: ["Perhatikan level kepercayaanmu karena memengaruhi tugas yang tersedia.", "Kerjakan teliti karena kualitas membangun reputasi.", "Gunakan waktu luang untuk membangun kepercayaan di platform."], warn: "Jangan membayar untuk mengakses tugas. Pembayaran datang dari perusahaan, bukan dari kamu.", link: "https://toloka.ai" },
+    { cat: "ai", tag: "aktif", name: "Alignerr", what: "Platform yang merekrut ahli untuk mengevaluasi dan melatih model AI di bidang tertentu.", need: "Laptop, keahlian di bidang tertentu, lolos tes", amount: "Rp 1jt - 5jt / bulan", note: "Lebih tinggi untuk keahlian tertentu, tidak dijamin", steps: ["Daftar di alignerr.com dan isi keahlian.", "Ikuti tes kualifikasi.", "Ambil proyek yang sesuai setelah diterima."], tips: ["Tulis keahlian dengan spesifik.", "Simpan contoh pekerjaan untuk menunjukkan kualitas.", "Ikuti jadwal proyek agar tidak kehilangan kesempatan."], warn: "Cek bahwa perusahaan jelas dan tidak meminta biaya pendaftaran.", link: "https://www.alignerr.com" },
+
+    // FREELANCE
+    { cat: "freelance", tag: "aktif", name: "Fiverr", what: "Marketplace jasa freelance global untuk menawarkan desain, penulisan, dan layanan digital.", need: "Laptop atau HP, akun Fiverr, keahlian yang bisa dijual", amount: "Rp 500rb - 5jt / bulan", note: "Bervariasi jauh, tergantung keahlian dan reputasi", steps: ["Daftar di fiverr.com dan buat profil.", "Buat 1 sampai 3 gig dengan deskripsi jelas.", "Balas pesan cepat dan kirim hasil tepat waktu."], tips: ["Pasang contoh pekerjaan yang kuat di setiap gig.", "Balas chat dalam hitungan jam untuk peringkat lebih baik.", "Mulai dengan harga bersaing untuk ulasan pertama."], warn: "Hindari klien yang mengajak komunikasi di luar platform karena kamu tidak terlindungi.", link: "https://www.fiverr.com" },
+    { cat: "freelance", tag: "aktif", name: "Upwork", what: "Platform freelance global untuk proyek jangka pendek dan panjang.", need: "Laptop, akun Upwork, profil lengkap, keahlian spesifik", amount: "Rp 1jt - 10jt / bulan", note: "Sedang sampai tinggi, tergantung keahlian dan reputasi", steps: ["Daftar di upwork.com dan lengkapi profil.", "Ajukan proposal pada proyek yang sesuai.", "Setelah proyek berjalan, kirim hasil sesuai jadwal."], tips: ["Tulis proposal spesifik yang merujuk kebutuhan klien.", "Mulai dari proyek kecil untuk membangun ulasan.", "Gunakan kontrak dan sistem pembayaran platform."], warn: "Waspadai klien yang meminta bayaran di luar platform atau mengirim cek berlebih.", link: "https://www.upwork.com" },
+    { cat: "freelance", tag: "aktif", name: "Sribu", what: "Marketplace freelance lokal Indonesia untuk jasa desain, penulisan, dan teknologi.", need: "HP atau laptop, akun Sribu, keahlian yang bisa dijual", amount: "Rp 300rb - 3jt / bulan", note: "Kecil sampai sedang, tergantung kategori jasa", steps: ["Daftar di sribu.com dan lengkapi profil.", "Buat paket jasa dengan harga dan deskripsi jelas.", "Balas pesanan dan kirim hasil tepat waktu."], tips: ["Portofolio sederhana tetap berguna untuk klien lokal.", "Tawarkan paket dasar agar klien pemula mudah mencoba.", "Minta ulasan setelah pekerjaan selesai."], warn: "Jangan transfer di luar sistem platform.", link: "https://www.sribu.com" },
+    { cat: "freelance", tag: "aktif", name: "Virtual Assistant", what: "Membantu klien dengan tugas administrasi seperti jadwal, email, dan input data secara online.", need: "HP atau laptop, komunikasi tertulis yang baik, internet stabil", amount: "Rp 1jt - 4jt / bulan", note: "Tergantung jam kerja dan jumlah klien", steps: ["Tentukan layanan, misalnya input data atau jadwal.", "Buat profil di marketplace freelance atau LinkedIn.", "Mulai dengan satu klien dan minta ulasan."], tips: ["Kuasai Google Sheets, Canva, dan kalender digital.", "Tetapkan jam kerja yang jelas sejak awal.", "Gunakan kontrak tertulis sederhana."], warn: "Hati-hati dengan tawaran yang meminta akses rekening bank atau password klien.", link: "" },
+    { cat: "freelance", tag: "aktif", name: "Penulisan Konten", what: "Menulis artikel, caption, dan naskah untuk bisnis atau blog dengan bayaran per tulisan.", need: "Laptop atau HP, menulis Bahasa Indonesia atau Inggris yang baik", amount: "Rp 500rb - 3jt / bulan", note: "Tergantung kualitas, panjang tulisan, dan jumlah klien", steps: ["Buat 3 sampel tulisan di bidang yang kamu kuasai.", "Daftar di platform freelance atau tawarkan ke pemilik usaha kecil.", "Kirim tulisan sesuai brief dan minta masukan."], tips: ["Pelajari gaya tulisan yang diminta klien.", "Gunakan sumber resmi agar tulisanmu dipercaya.", "Bangun portofolio di blog atau Medium."], warn: "Jangan menjiplak tulisan orang lain. Klien bisa menuntut dan akunmu bisa diblokir.", link: "" },
+    { cat: "freelance", tag: "aktif", name: "Penerjemahan", what: "Menerjemahkan dokumen, artikel, atau konten antara Bahasa Indonesia dan bahasa asing.", need: "Dua bahasa yang baik, laptop, kamus atau alat bantu", amount: "Rp 500rb - 4jt / bulan", note: "Sedang, tergantung bahasa dan tingkat kesulitan", steps: ["Tentukan pasangan bahasa yang kamu kuasai.", "Buat sampel terjemahan untuk profil.", "Ajukan tawaran sesuai proyek di platform freelance."], tips: ["Fokus satu bidang, misalnya pariwisata atau teknis.", "Periksa ulang sebelum dikirim.", "Gunakan alat bantu sebagai pembanding, bukan hasil akhir."], warn: "Dokumen resmi seperti akta atau ijazah memerlukan penerjemah tersumpah.", link: "" },
+    { cat: "freelance", tag: "aktif", name: "Customer Service Chat Remote", what: "Menjawab pertanyaan pelanggan lewat chat untuk perusahaan secara remote.", need: "HP atau laptop, komunikasi sopan, internet stabil", amount: "Rp 3jt - 6jt / bulan", note: "Sering berupa gaji tetap atau per jam", steps: ["Cari lowongan customer service chat remote di platform kerja resmi.", "Siapkan contoh jawaban untuk pertanyaan umum.", "Ikuti tes dan wawancara perusahaan."], tips: ["Pelajari cara menjawab keluhan dengan tenang.", "Kuasai aplikasi chat yang umum dipakai.", "Tanyakan jam kerja dan sistem bayar sebelum menerima."], warn: "Waspadai lowongan yang meminta biaya pelatihan atau pembelian perangkat.", link: "" },
+
+    // DIGITAL
+    { cat: "digital", tag: "aktif", name: "Canva Templates", what: "Membuat template desain seperti poster, presentasi, dan media sosial untuk dijual.", need: "Laptop atau HP, akun Canva, desain dasar", amount: "Rp 200rb - 2jt / bulan", note: "Bergantung jumlah produk dan penjualan", steps: ["Buat akun di canva.com dan pelajari fitur dasar.", "Desain 5 sampai 10 template dengan tema yang sama.", "Jual di marketplace digital yang mengizinkan."], tips: ["Riset tren desain sebelum membuat.", "Buat tema spesifik, misalnya template usaha kuliner.", "Pastikan lisensi aset sesuai."], warn: "Periksa lisensi aset dan ketentuan jual template sebelum menjual.", link: "https://www.canva.com" },
+    { cat: "digital", tag: "aktif", name: "Etsy Printables", what: "Menjual file digital yang bisa dicetak sendiri oleh pembeli, seperti planner, kartu, atau poster.", need: "Laptop, akun Etsy, desain dasar", amount: "Rp 200rb - 3jt / bulan", note: "Kecil di awal, bisa naik jika konsisten", steps: ["Buat akun di etsy.com dan lengkapi toko.", "Desain 10 sampai 20 printable tema serupa.", "Unggah dengan judul, deskripsi, dan kata kunci jelas."], tips: ["Gunakan kata kunci yang dicari pembeli.", "Tambahkan foto mockup yang menarik.", "Perbarui toko secara rutin."], warn: "Pastikan karyamu tidak melanggar hak cipta dan cek biaya platform.", link: "https://www.etsy.com" },
+    { cat: "digital", tag: "aktif", name: "YouTube AdSense", what: "Penghasilan dari iklan di video YouTube setelah memenuhi syarat monetisasi.", need: "Akun YouTube, konten konsisten, memenuhi syarat program", amount: "Rp 0 - 5jt+ / bulan", note: "Sangat bervariasi. Butuh berbulan-bulan untuk konsisten.", steps: ["Pilih satu topik yang bisa kamu buat terus-menerus.", "Unggah video rutin dengan judul dan thumbnail jelas.", "Ajukan monetisasi setelah memenuhi syarat."], tips: ["HP sudah cukup untuk merekam di awal.", "Buat judul yang menjawab pertanyaan penonton.", "Analisis data penonton tiap bulan."], warn: "Butuh waktu lama. Jangan berharap hasil cepat.", link: "https://www.youtube.com" },
+    { cat: "digital", tag: "aktif", name: "TikTok Creator Rewards", what: "Program pendapatan TikTok untuk kreator yang memenuhi syarat penonton dan usia akun.", need: "Akun TikTok, memenuhi syarat program, konten orisinal", amount: "Rp 100rb - 3jt / bulan", note: "Bergantung penonton dan durasi video", steps: ["Buat akun dan posting konten rutin di satu topik.", "Cek syarat program di pusat kreator TikTok.", "Daftar setelah syarat terpenuhi dan pantau penghasilan."], tips: ["Buat video 30 sampai 60 detik dengan hook di 3 detik pertama.", "Ikuti tren yang relevan dengan audiensmu.", "Posting saat audiensmu aktif."], warn: "Waspadai 'jasa naik followers' karena bisa membuat akun dibanned.", link: "https://www.tiktok.com" },
+    { cat: "digital", tag: "aktif", name: "Medium Partner Program", what: "Program yang membayar penulis berdasarkan waktu baca dan interaksi pembaca.", need: "Akun Medium, tulisan orisinal, memenuhi syarat program", amount: "Rp 100rb - 1,5jt / bulan", note: "Kecil sampai sedang, bergantung pembaca", steps: ["Daftar di medium.com dan buat profil penulis.", "Tulis artikel rutin di satu topik.", "Ajukan program partner setelah memenuhi syarat."], tips: ["Judul kuat dan subjudul yang menjelaskan manfaat.", "Tulis dalam seri agar pembaca kembali.", "Bagikan tulisan di media sosial."], warn: "Cek kebijakan terbaru karena syarat dan pembayaran bisa berubah.", link: "https://medium.com" },
+    { cat: "digital", tag: "aktif", name: "Blog dengan AdSense", what: "Blog yang menghasilkan pendapatan dari iklan Google AdSense.", need: "Platform blog gratis, konten orisinal, akun Google", amount: "Rp 0 - 2jt+ / bulan", note: "Lambat di awal, naik jika trafik stabil", steps: ["Buat blog gratis di Blogger atau WordPress.com.", "Tulis artikel yang menjawab pertanyaan spesifik di Indonesia.", "Daftar AdSense setelah konten dan trafik memenuhi syarat."], tips: ["Pilih satu niche, misalnya resep atau keuangan rumah tangga.", "Pelajari SEO dasar: judul dan deskripsi.", "Perbarui artikel lama agar tetap relevan."], warn: "Jangan mengklik iklan sendiri karena akun bisa ditutup.", link: "https://www.google.com/adsense" },
+
+    // AFILIASI
+    { cat: "afiliasi", tag: "aktif", name: "Shopee Affiliate", what: "Program afiliasi resmi Shopee yang memberi komisi dari pembelian lewat link kamu.", need: "Akun Shopee, media sosial atau blog, memenuhi syarat", amount: "Rp 200rb - 3jt / bulan", note: "Bervariasi, tergantung produk dan jumlah pembelian", steps: ["Daftar di affiliate.shopee.co.id.", "Pilih produk dan buat link dari dashboard.", "Bagikan dengan konten yang jujur."], tips: ["Buat review singkat dari produk yang kamu pakai.", "Pilih produk dengan rating dan ulasan tinggi.", "Tutorial pendek membuat orang lebih percaya."], warn: "Cantumkan keterangan afiliasi. Jangan memberi janji palsu tentang produk.", link: "https://affiliate.shopee.co.id" },
+    { cat: "afiliasi", tag: "aktif", name: "TikTok Shop Affiliate", what: "Komisi dari penjualan produk TikTok Shop lewat video atau live.", need: "Akun TikTok, memenuhi syarat program, konten rutin", amount: "Rp 300rb - 5jt / bulan", note: "Sering naik jika konten sering ditonton", steps: ["Buat akun TikTok dan cek syarat afiliasi TikTok Shop.", "Daftar dan pilih produk sesuai audiensmu.", "Buat video atau live review dan pantau penjualannya."], tips: ["Demo produk di 15 sampai 30 detik pertama.", "Pilih produk dengan komisi jelas.", "Ulangi format video yang paling menghasilkan."], warn: "Jangan menjual produk palsu atau memberi klaim kesehatan yang tidak terbukti.", link: "https://www.tiktok.com" },
+    { cat: "afiliasi", tag: "aktif", name: "Tokopedia Affiliate", what: "Komisi dari pembelian di Tokopedia yang berasal dari link kamu.", need: "Akun Tokopedia, kanal media sosial atau blog, memenuhi syarat", amount: "Rp 200rb - 3jt / bulan", note: "Bervariasi, tergantung produk dan transaksi", steps: ["Cek syarat dan daftar program afiliasi Tokopedia.", "Pilih produk yang kamu yakini dan buat link.", "Bagikan dengan konten yang jujur."], tips: ["Buat daftar produk sesuai kebutuhan spesifik.", "Gunakan foto asli dari pemakaian produk.", "Fokus pada produk yang laku."], warn: "Cantumkan keterangan afiliasi dan jangan menyesatkan calon pembeli.", link: "https://www.tokopedia.com" },
+    { cat: "afiliasi", tag: "aktif", name: "Lazada Affiliate", what: "Komisi dari penjualan Lazada yang masuk lewat link kamu.", need: "Media sosial atau blog, memenuhi syarat program", amount: "Rp 200rb - 2jt / bulan", note: "Bergantung kategori produk", steps: ["Daftar di program afiliasi Lazada.", "Pilih kategori produk dan buat link.", "Bagikan dan pantau performa tiap minggu."], tips: ["Pilih satu kategori dan fokus di situ.", "Tulis perbandingan singkat dua produk.", "Manfaatkan promo yang sedang berjalan."], warn: "Pastikan informasi harga dan promo sesuai kondisi terkini.", link: "https://www.lazada.co.id" },
+    { cat: "afiliasi", tag: "aktif", name: "Jual Barang Bekas", what: "Menjual barang tidak terpakai lewat marketplace atau grup jual beli.", need: "HP dengan kamera, akun marketplace, barang masih layak", amount: "Rp 50rb - 1jt (sekali jalan)", note: "Tergantung jumlah barang dan harga", steps: ["Pilih barang yang masih layak dan kumpulkan.", "Foto dengan cahaya terang dan tulis deskripsi jujur.", "Pasang di Facebook Marketplace atau Carousell dan balas chat cepat."], tips: ["Cek harga serupa agar harga wajar.", "Bersihkan barang sebelum difoto.", "Pilih COD di tempat umum jika bertemu langsung."], warn: "Hindari transfer ke rekening tidak jelas atau pembeli yang minta kirim dulu baru bayar.", link: "https://www.carousell.co.id" },
+    { cat: "afiliasi", tag: "aktif", name: "Flipping Barang Thrift", what: "Membeli barang bekas murah lalu menjualnya lagi dengan harga lebih tinggi.", need: "Modal kecil, akses toko thrift atau pasar barang bekas, akun marketplace", amount: "Rp 100rb - 2jt / bulan", note: "Naik turun, tergantung barang dan jeli membeli", steps: ["Pelajari harga pasar satu jenis barang, misalnya sepatu atau tas.", "Beli dengan harga wajar dan cek kondisinya.", "Bersihkan, foto, dan jual di marketplace."], tips: ["Fokus satu jenis barang agar paham harganya.", "Catat harga beli dan jual untuk melihat untung.", "Mulai dengan modal kecil."], warn: "Hindari barang curian atau palsu. Itu bisa berujung masalah hukum.", link: "" },
+
+    // CASHBACK
+    { cat: "cashback", tag: "pasif", name: "Shopee Coins dan Promo", what: "Mengumpulkan koin dan voucher dari belanja di Shopee untuk potongan harga.", need: "Akun Shopee aktif dan kebiasaan belanja", amount: "Rp 20rb - 150rb / bulan (hemat)", note: "Berupa potongan harga, bukan uang tunai", steps: ["Buka menu Shopee Coins di aplikasi.", "Selesaikan misi harian yang tersedia.", "Gunakan koin saat checkout."], tips: ["Cek promo saat gajian atau tanggal kembar.", "Pakai voucher gratis ongkir.", "Bandingkan harga sebelum belanja."], warn: "Jangan belanja berlebihan demi koin. Pengeluaran bisa lebih besar dari hemat.", link: "https://shopee.co.id" },
+    { cat: "cashback", tag: "pasif", name: "Promo Cashback E-Wallet", what: "Cashback dari transaksi lewat dompet digital resmi seperti DANA, OVO, atau GoPay.", need: "Akun e-wallet resmi dan nomor HP terdaftar", amount: "Rp 10rb - 100rb / bulan (hemat)", note: "Kecil, berupa cashback atau saldo promo", steps: ["Pilih e-wallet resmi yang kamu pakai.", "Cek halaman promo di aplikasi.", "Lakukan transaksi yang memenuhi syarat promo."], tips: ["Bandingkan promo antar e-wallet.", "Simpan notifikasi promo agar tidak terlewat.", "Pakai promo untuk kebutuhan yang memang kamu beli."], warn: "Jangan bagikan PIN atau OTP kepada siapa pun, termasuk yang mengaku dari layanan resmi.", link: "https://www.dana.id" },
+    { cat: "cashback", tag: "pasif", name: "Referral Aplikasi Keuangan Resmi", what: "Bonus dari mengajak teman memakai aplikasi keuangan yang terdaftar di OJK.", need: "Aplikasi terdaftar OJK, akun pribadi, teman yang tertarik", amount: "Rp 20rb - 200rb (per referral)", note: "Sekali per referral yang berhasil", steps: ["Cek legalitas aplikasi di situs OJK.", "Daftar dan cari menu referral di aplikasi.", "Bagikan kode resmi ke teman yang memang membutuhkan."], tips: ["Pastikan teman paham risikonya.", "Jangan memaksa orang mendaftar.", "Catat bonus yang sudah cair."], warn: "Jangan sebarkan referral untuk aplikasi tidak terdaftar atau yang menjanjikan hasil pasti.", link: "https://www.ojk.go.id" },
+    { cat: "cashback", tag: "pasif", name: "Ekstensi Browser Cashback", what: "Ekstensi browser yang memberi cashback saat belanja di situs yang bekerja sama.", need: "Laptop dengan browser seperti Chrome, akun belanja", amount: "Rp 10rb - 80rb / bulan (hemat)", note: "Tergantung jumlah belanja", steps: ["Pasang ekstensi dari toko ekstensi resmi browser.", "Login dan aktifkan notifikasi.", "Belanja lewat situs yang didukung."], tips: ["Pilih ekstensi dengan banyak ulasan dan penerbit jelas.", "Cek izin akses sebelum memasang.", "Bandingkan cashback dengan promo langsung toko."], warn: "Ekstensi palsu bisa mencuri data. Pasang hanya dari toko resmi.", link: "" },
+
+    // INVESTASI
+    { cat: "investasi", tag: "investasi", name: "Tabungan dan Deposito Bank", what: "Menyimpan uang di bank dengan bunga. Deposito biasanya bunganya lebih tinggi.", need: "Rekening bank, KTP, setoran minimal sesuai bank", amount: "Bunga kecil, mengikuti bank", note: "Estimasi bunga mengikuti kebijakan bank saat itu", steps: ["Pilih bank yang terdaftar dan dijamin LPS.", "Buka tabungan atau deposito sesuai kebutuhan.", "Cek bunga dan jangka waktu sebelum menyetor."], tips: ["Bandingkan bunga beberapa bank.", "Pakai tabungan untuk dana darurat dulu.", "Catat tanggal jatuh tempo deposito."], warn: "Pastikan bank terdaftar dan dijamin LPS.", link: "https://www.lps.go.id" },
+    { cat: "investasi", tag: "investasi", name: "Reksa Dana", what: "Kumpulan dana dari banyak investor, dikelola manajer investasi untuk dibelikan aset tertentu.", need: "KTP, rekening bank, platform yang terdaftar di OJK", amount: "Bervariasi, bisa naik atau turun", note: "Tidak ada hasil yang pasti", steps: ["Cek manajer investasi terdaftar di situs OJK.", "Pilih reksa dana sesuai tujuan dan jangka waktu.", "Beli bertahap dan pantau berkala."], tips: ["Mulai nominal kecil untuk belajar.", "Pahami jenis: pasar uang, pendapatan tetap, atau saham.", "Investasi jangka panjang lebih stabil."], warn: "Nilai investasi bisa turun. Jangan pakai dana darurat.", link: "https://www.ojk.go.id" },
+    { cat: "investasi", tag: "investasi", name: "Obligasi Ritel Pemerintah", what: "Surat utang negara yang bisa dibeli masyarakat dengan nominal relatif kecil dan bunga tetap.", need: "Rekening bank, KTP, saluran resmi penjual SBN ritel", amount: "Bunga tetap sesuai kupon", note: "Mengikuti kupon dan jangka waktu", steps: ["Cek jadwal penawaran ORI atau SR yang berjalan.", "Beli lewat bank atau platform resmi.", "Simpan sampai jatuh tempo atau jual sesuai aturan."], tips: ["Cek kupon dan jangka waktu sebelum membeli.", "Pahami aturan jual kembali.", "Gunakan untuk tujuan jangka menengah."], warn: "Beli hanya lewat saluran resmi. Waspadai orang yang menawarkan 'bunga tinggi' di media sosial.", link: "" },
+    { cat: "investasi", tag: "investasi", name: "Aplikasi Investasi Terdaftar OJK", what: "Aplikasi untuk membeli reksa dana atau produk investasi lain yang terdaftar di OJK.", need: "KTP, rekening bank, aplikasi resmi terdaftar OJK", amount: "Bervariasi, bisa naik atau turun", note: "Tidak ada hasil yang pasti", steps: ["Cek legalitas aplikasi di situs OJK.", "Buat akun dan lengkapi verifikasi.", "Mulai nominal kecil dan pelajari fitur edukasinya."], tips: ["Pakai fitur edukasi untuk memahami risiko.", "Atur pembelian rutin dengan nominal tetap.", "Pantau laporan bulanan."], warn: "Waspadai aplikasi yang menjanjikan untung pasti atau meminta setoran ke rekening pribadi.", link: "https://www.ojk.go.id" }
+  ];
+
+  const labels = {
+    pasif: "Pasif", survei: "Survei", ai: "Kerja AI", freelance: "Freelance",
+    digital: "Produk Digital", afiliasi: "Afiliasi", cashback: "Cashback", investasi: "Investasi"
+  };
+
+  const container = document.getElementById("methods");
+  const empty = document.getElementById("empty");
+
+  function esc(s) {
+    return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+
+  function render(filter) {
+    const list = methods.filter(m => filter === "all" || m.cat === filter);
+    empty.style.display = list.length ? "none" : "block";
+    container.innerHTML = list.map(m => {
+      const linkBlock = m.link
+        ? `<a class="btn" href="${esc(m.link)}" target="_blank" rel="noopener nofollow">Buka situs resmi</a>`
+        : `<span class="nolink">Tidak ada satu situs resmi. Cari sumber resmi sendiri.</span>`;
+      const tagLabel = m.tag === "pasif" ? "Pasif" : m.tag === "investasi" ? "Investasi" : "Aktif";
+      return `
+      <article class="method">
+        <div class="method-head">
+          <h3>${esc(m.name)}</h3>
+          <span class="tag ${m.tag}">${tagLabel}</span>
+        </div>
+        <p class="what">${esc(m.what)}</p>
+        <div class="income">
+          <div class="lbl">Estimasi pendapatan</div>
+          <div class="amt">${esc(m.amount)}</div>
+          <div class="note">${esc(m.note)}</div>
+        </div>
+        <p class="req"><b>Yang dibutuhkan:</b> ${esc(m.need)}</p>
+        <div class="sec-label">Langkah-langkah</div>
+        <ol class="steps">${m.steps.map(s => `<li>${esc(s)}</li>`).join("")}</ol>
+        <div class="tips-box">
+          <div class="sec-label">Tips dan trik</div>
+          <ul class="tips">${m.tips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+        </div>
+        <div class="warn"><b>Hati-hati:</b> ${esc(m.warn)}</div>
+        <div class="m-foot">${linkBlock}</div>
+      </article>`;
+    }).join("");
+  }
+
+  document.querySelectorAll("#filters button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#filters button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      render(btn.dataset.cat);
+    });
+  });
+
+  render("all");
+</script>
+</body>
+</html>
